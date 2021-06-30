@@ -57,3 +57,8 @@ footer.footer {
   background-color: rgb(45, 0, 54);
   color: azure;
 }
+
+.img-fluid {
+  height: 100%;
+  width: 100%;
+}

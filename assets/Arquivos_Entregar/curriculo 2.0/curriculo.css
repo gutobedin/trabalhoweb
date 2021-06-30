@@ -1,0 +1,18 @@
+.foto-perfil {
+    border-radius: 100%;
+    max-width: 200px;
+    border: 3px solid rgb(0, 255, 42);
+
+}
+
+.fundo {
+    background-color: #dfdbdb;
+}
+
+.cor {
+    color: rgb(28, 28, 28);
+}
+
+.fonte {
+    font: bold;
+}

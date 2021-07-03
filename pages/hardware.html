@@ -1,0 +1,107 @@
+<header class="header d-flex flex-column px-3">
+  <h1 class="mt-3">
+    <i class="fas fa-server"></i> Bem Vindo!
+    <!-- icon -->
+  </h1>
+  <p class="lead text-muted">Escolha aqui seu Setup!</p>
+</header>
+<main class="content container-fluid mt-4">
+  <div class="p-3 mt-3">
+    <div class="row ml-2">
+      <div class="col-sm-4 primary py-3">
+        <form action="#" name="hardwareForm" class="form">
+          <div class="d-flex flex-column">
+            <div class="form-group text-left">
+              <label for="gabinete">Gabinete</label>
+              <select
+                class="form-control"
+                name="gabinete"
+                id="gabinete"
+                required
+              >
+                <option disabled selected value="1">Selecione</option>
+                <option value="PICHAU SERAPH">PICHAU SERAPH</option>
+                <option value="PICHAU GADIT">PICHAU GADIT</option>
+                <option value="H710I Matte White">H710I Matte White</option>
+              </select>
+            </div>
+            <div class="form-group text-left">
+              <label for="video">Placa de Vídeo</label>
+              <select class="form-control" name="video" id="video" required>
+                <option disabled selected value="">Selecione</option>
+                <option value="PICHAU SERAPH">PICHAU SERAPH</option>
+                <option value="PICHAU GADIT">PICHAU GADIT</option>
+                <option value="H710I Matte White">H710I Matte White</option>
+              </select>
+            </div>
+            <div class="form-group text-left">
+              <label for="gabinete">Placa Mãe</label>
+              <select class="form-control" name="mae" id="mae" required>
+                <option disabled selected value="">Selecione</option>
+                <option value="PICHAU SERAPH">PICHAU SERAPH</option>
+                <option value="PICHAU GADIT">PICHAU GADIT</option>
+                <option value="H710I Matte White">H710I Matte White</option>
+              </select>
+            </div>
+            <div class="form-group text-left">
+              <label for="memoria">Memórias</label>
+              <select class="form-control" name="memoria" id="memoria" required>
+                <option disabled selected value="">Selecione</option>
+                <option value="PICHAU SERAPH">PICHAU SERAPH</option>
+                <option value="PICHAU GADIT">PICHAU GADIT</option>
+                <option value="H710I Matte White">H710I Matte White</option>
+              </select>
+            </div>
+            <div class="form-group text-left">
+              <label for="fonte">Fonte</label>
+              <select class="form-control" name="fonte" id="fonte" required>
+                <option disabled selected value="">Selecione</option>
+                <option value="PICHAU SERAPH">PICHAU SERAPH</option>
+                <option value="PICHAU GADIT">PICHAU GADIT</option>
+                <option value="H710I Matte White">H710I Matte White</option>
+              </select>
+            </div>
+            <div>
+              <button class="btn btn-secondary" type="reset">Limpar</button>
+              <button class="btn buttonPrimary" type="submit">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-8 primary h-100">
+        <table id="hardwareTable" class="table">
+          <thead>
+            <tr>
+              <th>Gabinete</th>
+              <th>Placa de Vídeo</th>
+              <th>Placa Mãe</th>
+              <th>Memórias</th>
+              <th>Fonte</th>
+            </tr>
+          </thead>
+          <tbody class="text-white"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  window.hardwareForm = document.hardwareForm;
+  const tbody = $("#hardwareTable > tbody");
+  if (window.hardwareForm) {
+    window.hardwareForm.onsubmit = function (e) {
+      e.preventDefault();
+      const formData = new FormData(window.hardwareForm);
+      const data = [
+        $("<td> </td>").append(formData.get("gabinete")),
+        $("<td> </td>").append(formData.get("video")),
+        $("<td> </td>").append(formData.get("mae")),
+        $("<td> </td>").append(formData.get("memoria")),
+        $("<td> </td>").append(formData.get("fonte")),
+      ];
+      const row = $("<tr> </tr>").append(data);
+      tbody.append(row);
+      window.hardwareForm.reset();
+    };
+  }
+</script>

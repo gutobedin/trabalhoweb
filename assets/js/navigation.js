@@ -4,7 +4,7 @@ const queryString = window.location.search;
 /* location guarda os dados da sua localização, html, host, porta, */
 /* window tem todas as funções basicas, objeto principal do js */
 const page = new URLSearchParams(queryString).get("page");
-console.log(page);
+/* console.log(page); */
 /* Ira printar algo no console, no caso seria o valor de page */
 /* URLSearchParams separa todos os parametros */
 

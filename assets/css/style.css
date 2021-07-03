@@ -2,7 +2,12 @@
 
 :root {
   /* Variaveis */
-  --bg-primary: rgb(71, 31, 71);
+  --bg-primary: linear-gradient(
+      0deg,
+      rgb(90, 62, 185) 0%,
+      rgb(130, 87, 229) 100%
+    )
+    center center / cover no-repeat rgb(130, 87, 229);
   --logo-height: 100px;
   --header-height: 100px;
   --menu-top-height: 70px;
@@ -13,28 +18,32 @@
 
 * {
   font-family: "Montserrat", sans-serif;
+  color: white;
 }
-
+option {
+  color: black;
+}
 .app {
   display: grid;
   grid-template-columns: var(--aside-width) 1fr; /* colunas */
   grid-template-rows: var(--header-height) 1fr var(--footer-height); /* Linhas */
-  background-color: #f5f5f5;
+  background-color: rgb(41, 41, 46);
   grid-template-areas: "logo header" "menu content" "menu footer";
 }
 
 header.header {
   grid-area: header;
+  background-color: rgb(61, 60, 66);
 }
 
 aside.logo {
   grid-area: logo;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
 }
 
 aside.menu-area {
   grid-area: menu;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.12), 2px 0 15px 0 rgba(0, 0, 0, 0.09);
 }
 
@@ -44,6 +53,7 @@ main.content {
 
 footer.footer {
   grid-area: footer;
+  background-color: rgb(61, 60, 66);
 }
 
 .menu a {
@@ -53,12 +63,28 @@ footer.footer {
   padding: 15px; /* espaçamento dentro do elemento */
 }
 
-.menu a:hover {
-  background-color: rgb(45, 0, 54);
+.menu a:hover,
+#hardwareTable tbody tr:hover {
+  background-color: rgb(60, 0, 129);
   color: azure;
 }
 
 .img-fluid {
   height: 100%;
   width: 100%;
+}
+
+.primary {
+  background: var(--bg-primary);
+  color: white;
+}
+
+.buttonPrimary {
+  background-color: rgb(60, 0, 129);
+  color: azure;
+}
+
+.buttonPrimary:hover {
+  background-color: rgb(48, 1, 100);
+  color: azure;
 }
